@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Dearest Babu ❤️ | Apology & Belated Birthday</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- Floating Background Particles (Hearts & Sparkles) -->
+    <div id="hearts-container" aria-hidden="true"></div>
+
+    <!-- ========================================== -->
+    <!-- INITIAL POPUP MODAL SCREEN                 -->
+    <!-- ========================================== -->
+    <div id="initial-modal" class="modal-overlay active">
+        <div class="modal-card initial-card">
+            <div class="modal-heart-icon">💖</div>
+            <h1 class="modal-title">Hey Beautiful...</h1>
+            <p class="modal-message">
+                "I know I made you sad and things haven't been right, but I have something special for you because you mean everything to me."
+            </p>
+            <button id="open-experience-btn" class="btn btn-primary pulse-btn">
+                <span>Open My Heart ❤️</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MAIN CONTAINER                             -->
+    <!-- ========================================== -->
+    <main id="main-content" class="content-hidden">
+
+        <!-- HEADER SECTION -->
+        <header class="header">
+            <div class="header-badge">A Heartfelt Note For You</div>
+            <h1 class="gradient-text">I Am So Sorry, Babu</h1>
+            <p class="subtitle">I ruined your special day, but my love for you is forever. Let me make it right.</p>
+        </header>
+
+        <!-- APOLOGY & STORY SECTION -->
+        <section class="section apology-section">
+            <div class="glass-card apology-card">
+                <div class="card-sparkle top-right">✨</div>
+                <div class="card-sparkle bottom-left">🌸</div>
+                <h2>My Sincere Apology 🥺</h2>
+                <div class="apology-text">
+                    <p>
+                        I know I hurt your feelings and spoiled your birthday mood. Looking back, I feel so foolish for letting anything ruin a day that was supposed to be all about celebrating <strong>YOU</strong>. 
+                    </p>
+                    <p>
+                        You bring so much warmth, laughter, and light into my life every single day. Seeing you sad breaks my heart into a thousand pieces, especially when I'm the reason behind it. 
+                    </p>
+                    <p>
+                        Please know that I regret it deeply. You deserve the world, all the happiness, and endless love. I promise to cherish you, listen to you, and always put a smile on your beautiful face.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHOTO GALLERY SECTION -->
+        <section class="section gallery-section">
+            <div class="section-title">
+                <h2>Our Precious Memories 📸</h2>
+                <p>Every moment with you is my favorite memory</p>
+            </div>
+
+            <!-- PHOTO GALLERY GRID -->
+            <!-- ========================================================================= -->
+            <!-- INSTRUCTION FOR USER: TO REPLACE WITH YOUR REAL PHOTOS:                  -->
+            <!-- Replace the src="assets/images/photoX.png" below with your photo paths!  -->
+            <!-- ========================================================================= -->
+            <div class="gallery-grid">
+
+                <!-- Photo Card 1 -->
+                <div class="polaroid-card" onclick="openLightbox('assets/images/photo1.jpg', 'My World & Me 💚')">
+                    <div class="tape"></div>
+                    <div class="image-wrapper">
+                        <img src="assets/images/photo1.jpg" alt="Raj & Abby" loading="lazy">
+                    </div>
+                    <div class="polaroid-caption">My World & Me 💚</div>
+                </div>
+
+                <!-- Photo Card 2 -->
+                <div class="polaroid-card" onclick="openLightbox('assets/images/photo2.jpg', 'Unforgettable Black & White Memory 🖤')">
+                    <div class="tape"></div>
+                    <div class="image-wrapper">
+                        <img src="assets/images/photo2.jpg" alt="Sweet Moments Together" loading="lazy">
+                    </div>
+                    <div class="polaroid-caption">Unforgettable Memory 🖤</div>
+                </div>
+
+                <!-- Photo Card 3 -->
+                <div class="polaroid-card" onclick="openLightbox('assets/images/photo3.jpg', 'Mirror Selfie With My Abby 💖')">
+                    <div class="tape"></div>
+                    <div class="image-wrapper">
+                        <img src="assets/images/photo3.jpg" alt="Mirror Selfie" loading="lazy">
+                    </div>
+                    <div class="polaroid-caption">Mirror Selfie With Abby 💖</div>
+                </div>
+
+                <!-- Photo Card 4 -->
+                <div class="polaroid-card" onclick="openLightbox('assets/images/photo4.jpg', 'My Gorgeous Birthday Girl ✨')">
+                    <div class="tape"></div>
+                    <div class="image-wrapper">
+                        <img src="assets/images/photo4.jpg" alt="Beautiful Abby" loading="lazy">
+                    </div>
+                    <div class="polaroid-caption">My Gorgeous Abby ✨</div>
+                </div>
+
+                <!-- Photo Card 5 -->
+                <div class="polaroid-card" onclick="openLightbox('assets/images/photo5.jpg', 'The Cutest Squishy Face 🥰')">
+                    <div class="tape"></div>
+                    <div class="image-wrapper">
+                        <img src="assets/images/photo5.jpg" alt="Cute Moments" loading="lazy">
+                    </div>
+                    <div class="polaroid-caption">Cutest Squishy Face 🥰</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FORGIVENESS QUESTION SECTION -->
+        <section class="section forgiveness-section" id="forgiveness-area">
+            <div class="glass-card forgiveness-card">
+                <div class="question-heart-pulse">❤️</div>
+                <h2>Would you forgive me?</h2>
+                <p>Can we make peace and celebrate your birthday together?</p>
+
+                <div class="button-group">
+                    <button id="yes-btn" class="btn btn-yes">
+                        <span>YES, I Forgive You! 🥰</span>
+                    </button>
+                    
+                    <button id="no-btn" class="btn btn-no">
+                        <span id="no-btn-text">No 😤</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- CELEBRATION & FINAL MESSAGE SECTION        -->
+        <!-- (REVEALED AFTER CLICKING YES)              -->
+        <!-- ========================================== -->
+        <section id="celebration-section" class="section celebration-section hidden">
+            
+            <div class="celebration-header glass-card">
+                <div class="birthday-badge">🎉 IT'S PARTY TIME! 🎉</div>
+                <h1 class="birthday-heading text-glow">
+                    Happy Belated Birthday Babu! <br>Love you a lot ❤️
+                </h1>
+                <p class="birthday-sub">You hold the key to my heart forever!</p>
+            </div>
+
+            <!-- HEARTFELT BELATED BIRTHDAY LETTER -->
+            <!-- ========================================================================= -->
+            <!-- INSTRUCTION FOR USER: YOU CAN EDIT YOUR PERSONAL BELATED BIRTHDAY LETTER -->
+            <!-- INSIDE THE DIV BELOW!                                                     -->
+            <!-- ========================================================================= -->
+            <div class="glass-card letter-card">
+                <div class="letter-stamp">💌</div>
+                <h2 class="handwritten-title">My Dearest Love,</h2>
+                
+                <div class="letter-body">
+                    <p>
+                        Happy belated birthday, baccha ❤️🥺
+                    </p>
+                    <p>
+                        Bro, I know maine tumhara birthday spoil kar diya because of my behaviour, aur upar se main tumhare liye kuch special bhi nahi kar paya… and honestly, mujhe iska genuinely bahut bura lagta hai. You deserved so much more, especially on your special day. 🥺❤️
+                    </p>
+                    <p>
+                        But ab main bas ye chahta hoon ki aaj se tumhara <strong>har din special ho</strong>, tum khush raho, smile karti raho, aur meri wajah se tumhe woh saari happiness mile jo tum deserve karti ho. 🫶🏻
+                    </p>
+                    <p>
+                        Babu, main tumhare liye jitna bhi kar loon, mujhe hamesha lagega ki kam hai. Tumne mere liye itna kuch kiya hai — chahe woh tumhare surprises ho, meri side lena ho, mujhe manana ho, meri stupidities ko tolerate karna ho, ya phir har situation mein mera saath na chhodne wala tumhara <strong>never-give-up attitude</strong>. ❤️
+                    </p>
+                    <p>
+                        Tumne mere liye bohot kuch kiya hai, aur shayad main har baar words mein express nahi kar pata ki main us sabko kitna value karta hoon. But I really do, babu. More than you know. 🥺
+                    </p>
+                    <p>
+                        Ab meri bas ek wish hai — <strong>meri Abby hamesha happy rahe, healthy rahe, peaceful rahe aur apni beautiful si smile ke saath rahe.</strong> ❤️
+                    </p>
+                    <p>
+                        Aur main chahta hoon ki main tumhari life mein problems ka reason nahi, balki tumhari happiness, comfort aur support ka reason banu. 🫂❤️
+                    </p>
+                    <p>
+                        I love you so much, baccha. ❤️<br>
+                        And this time, I don't just want to say it… <strong>I want to show it every single day.</strong> 🥺🫶🏻.......
+                    </p>
+                    
+                    <div class="letter-signature">
+                        Forever & Always Yours,<br>
+                        <span class="signature-name">Your One and Only Raj ❤️</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REASONS WHY I LOVE YOU (INTERACTIVE CARDS) -->
+            <div class="reasons-wrapper">
+                <h3 class="sub-title">5 Reasons Why You Are My Everything 💖</h3>
+                <div class="reasons-grid">
+                    <div class="reason-card">
+                        <div class="reason-num">01</div>
+                        <h4>Your Gorgeous Smile</h4>
+                        <p>It instantly brightens up my darkest days and melts my heart every single time.</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-num">02</div>
+                        <h4>Your Caring Heart</h4>
+                        <p>You care so genuinely and love so purely. You make me want to be a better person.</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-num">03</div>
+                        <h4>Our Inside Jokes</h4>
+                        <p>No one makes me laugh like you do. We are the perfect silly team together!</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-num">04</div>
+                        <h4>Your Soft Hugs</h4>
+                        <p>Wrapping my arms around you feels like home. It's my favorite place in the world.</p>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-num">05</div>
+                        <h4>Simply Being YOU</h4>
+                        <p>You are unique, beautiful, funny, and precious. Never change, my love!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOVE VOUCHERS / PROMISES -->
+            <div class="vouchers-wrapper">
+                <h3 class="sub-title">Your Special Birthday Love Coupons 🎟️</h3>
+                <p class="voucher-sub">Tap any coupon to redeem it with me anytime!</p>
+                
+                <div class="vouchers-grid">
+                    <div class="voucher-card" onclick="redeemVoucher(this)">
+                        <div class="voucher-icon">☕</div>
+                        <h4>Cotea Cafe Date</h4>
+                        <p>Your favorite coffee & conversation date!</p>
+                        <span class="voucher-status">Tap to Redeem</span>
+                    </div>
+                    <div class="voucher-card" onclick="redeemVoucher(this)">
+                        <div class="voucher-icon">🌙</div>
+                        <h4>Late Night Campus Walk</h4>
+                        <p>Walking hand-in-hand under the stars!</p>
+                        <span class="voucher-status">Tap to Redeem</span>
+                    </div>
+                    <div class="voucher-card" onclick="redeemVoucher(this)">
+                        <div class="voucher-icon">📞</div>
+                        <h4>Late Night Phone Calls</h4>
+                        <p>Endless late night talks until sunrise!</p>
+                        <span class="voucher-status">Tap to Redeem</span>
+                    </div>
+                    <div class="voucher-card" onclick="redeemVoucher(this)">
+                        <div class="voucher-icon">🍦</div>
+                        <h4>Late Night Ice Cream Drive</h4>
+                        <p>Valid anytime! My treat!</p>
+                        <span class="voucher-status">Tap to Redeem</span>
+                    </div>
+                    <div class="voucher-card" onclick="redeemVoucher(this)">
+                        <div class="voucher-icon">🤗</div>
+                        <h4>Unlimited Hugs & Cuddles</h4>
+                        <p>No expiration date!</p>
+                        <span class="voucher-status">Tap to Redeem</span>
+                    </div>
+                    <div class="voucher-card" onclick="redeemVoucher(this)">
+                        <div class="voucher-icon">👑</div>
+                        <h4>"You Win Any Argument" Pass</h4>
+                        <p>One free win guaranteed!</p>
+                        <span class="voucher-status">Tap to Redeem</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- PLAYFUL STUBBORN 'NO' POPUP MODAL          -->
+    <!-- ========================================== -->
+    <div id="playful-modal" class="modal-overlay">
+        <div class="modal-card alert-card">
+            <div class="modal-emoji" id="alert-emoji">🥺</div>
+            <h3 id="alert-title">Ab to maaf krdo please!</h3>
+            <p id="alert-msg">I promise to treat you like a princess forever! Try clicking Yes!</p>
+            <button id="alert-close-btn" class="btn btn-secondary">
+                <span>Okay, I'll think! 💭</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- LIGHTBOX MODAL FOR GALLERY IMAGES          -->
+    <!-- ========================================== -->
+    <div id="lightbox-modal" class="modal-overlay" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-img" src="" alt="Enlarged Photo">
+            <p id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- FIXED FLOATING AUDIO PLAYER BAR             -->
+    <!-- ========================================== -->
+    <div class="audio-player-bar">
+        <!-- ========================================================================= -->
+        <!-- INSTRUCTION FOR USER: TO ADD YOUR FAVOURITE MP3 SONG:                    -->
+        <!-- Add your audio file at src="assets/audio/song.mp3" below!                -->
+        <!-- ========================================================================= -->
+        <audio id="bg-audio" loop>
+            <source src="assets/audio/song.mp3" type="audio/mp3">
+        </audio>
+
+        <div class="player-info">
+            <div class="music-disc" id="music-disc">🎵</div>
+            <div class="track-details">
+                <span class="track-title" id="track-title">Our Romantic Melody</span>
+                <span class="track-status" id="track-status">Tap play to listen ❤️</span>
+            </div>
+        </div>
+
+        <div class="equalizer-bars" id="equalizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <button id="audio-toggle-btn" class="audio-btn" title="Play / Pause Song">
+            <span id="audio-btn-icon">▶️</span>
+        </button>
+    </div>
+
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
